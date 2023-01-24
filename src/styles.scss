@@ -43,3 +43,17 @@ footer {
   max-width: 300px;
   height: auto;
 }
+
+.wrapper-data {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 0;
+
+}

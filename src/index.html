@@ -20,62 +20,37 @@
     </header>
     <nav>
       <div class="nav__column-one">
-        <label for="text">
-          Nosaukums
-        </label><br>
-        <input data-input-one type="text" 
-        id="text" 
-        name="text" 
-        placeholder="search" 
-        pattern="[a-z]" 
-        required>
+        <button data-btn-sort-name>Nosaukums</button><br>
+        <input data-input-one type="text" id="text" name="text" placeholder="search" pattern="[a-z]" required>
       </div>
       <div class="nav__column-one">
-        <label for="text">
-          Galvas pilsēta
-        </label><br>
-        <input type="text" 
-        id="text" 
-        name="text" 
-        placeholder="search" 
-        pattern="[a-z]" 
-        required>
-      </div>
-      <div class="nav__column-one">
-        <label for="text">
+        <button data-btn-sort-code>
           Currency name
-        </label><br>
-        <input type="text" 
-        id="text" 
-        name="text" 
-        placeholder="search" 
-        pattern="[a-z]" 
-        required>
+        </button><br>
+        <input type="text" id="text" name="text" placeholder="search" pattern="[a-z]" required>
       </div>
       <div class="nav__column-one">
-        <label for="text">
+        <button data-btn-sort-capital>
+          Galvas pilsēta
+        </button><br>
+        <input type="text" id="text" name="text" placeholder="search" pattern="[a-z]" required>
+      </div>
+      <div class="nav__column-one">
+        <button data-btn-sort-region>
           Language name
-        </label><br>
-        <input type="text" 
-        id="text" 
-        name="text" 
-        placeholder="search" 
-        pattern="[a-z]" 
-        required>
+        </button><br>
+        <input type="text" id="text" name="text" placeholder="search" pattern="[a-z]" required>
       </div>
     </nav>
     <div class="btn-search">
-      <button>
+      <button data-search-btn>
         Search
       </button>
     </div>
 
-    <section>
-      <div data-column-one class="column"></div>
-      <div data-column-two class="column"></div>
-      <div data-column-three class="column"></div>
-      <div data-column-four class="column"></div>
-    </section>
+    <section data-wrapper class="wrapper-data"></section>
+    
+
     <footer>
       <button>
         Load more or pagination
