@@ -34,11 +34,15 @@ const dataWrapper = document.querySelector("[data-wrapper]");
 const searchBtn = document.querySelector("[data-search-btn]");
 
 let counter = 1;
-let paginate = 19;
-let start = counter*paginate+1;
-let end = start+paginate-1;
+const paginate = 19;
 
+const getStart = () => {
+  return counter * paginate + 1;
+};
 
+const getEnd = () => {
+  return getStart() + paginate - 1;
+};
 
 searchBtn.addEventListener("click", function () {
   dataWrapper.innerHTML = "";
@@ -49,38 +53,23 @@ searchBtn.addEventListener("click", function () {
   const countryRegion = inputFour.value;
 
   getNewSortData(
-    `http://localhost:3000/countries?name_like=${countryName}&code_like=${countryCode}&capital_like=${countryCapital}&region_like=${countryRegion}&_start=${start}&_end=${end}`
+    `http://localhost:3000/countries?name_like=${countryName}&code_like=${countryCode}&capital_like=${countryCapital}&region_like=${countryRegion}`
   );
 });
-
-
-
-
-
-
-
-
-
-
 
 //-----------------GET MORE DATA -------------------------------------
 const getMoreBtn = document.querySelector("[data-get-mor-data]");
 
 getMoreBtn.addEventListener("click", function () {
-    console.log(start, end);
-    getNewSortData(`http://localhost:3000/countries?_start=${start}&_end=${end}`);
-    counter++;
+  const start = getStart();
+  const end = getEnd();
+
+  console.log(start, end);
+  
+
+  getNewSortData(`http://localhost:3000/countries?_start=${start}&_end=${end}`);
+  counter++;
 });
-
-
-
-
-
-
-
-
-
-
 
 //-----------------START PAGE---------------------------------
 document.addEventListener("DOMContentLoaded", function () {
@@ -131,13 +120,10 @@ const get18DataUrl = "http://localhost:3000/countries?name_start=1&_end=18";
 const getNewSortData = (url: string) => {
   axios.get<Countries[]>(url).then(({ data }) => {
     data.forEach((element) => {
+      const dataPlaceholder = document.createElement("div"); //     <div class="card-wrapper">
+      dataPlaceholder.classList.add("dataPlaceHolder");
 
-
-
-        const dataPlaceholder = document.createElement("div"); //     <div class="card-wrapper">
-        dataPlaceholder.classList.add("dataPlaceHolder");
-
-        dataPlaceholder.innerHTML = `
+      dataPlaceholder.innerHTML = `
         <div class="all-data one two">
             <span class="span-text">${element.name}</span>
         </div> 
@@ -152,59 +138,7 @@ const getNewSortData = (url: string) => {
         </div> 
 
         `;
-        dataWrapper.append(dataPlaceholder);
-
-
-
-      });
+      dataWrapper.append(dataPlaceholder);
     });
+  });
 };
-
-
-
-// dataPlaceholder.innerHTML = `
-        
-//         <div class="all-data one two">
-//             <span>${element.name}</span>
-//         </div> 
-//         <div class="all-data one">
-//             <span>${element.code}</span>
-//         </div>
-//         <div class="all-data one">
-//             <span>${element.capital}</span>
-//         </div>
-//         <div class="all-data one">
-//             <span>${element.region}</span>
-//         </div> 
-
-//         `;
-
-
-// const getNewSortData = (url: string) => {
-//     axios.get<Countries[]>(url).then(({ data }) => {
-//       data.forEach((element) => {
-//         const row = document.createElement("div");
-//         row.classList.add("row");
-  
-//         const firstColumn = document.createElement("span");
-//         firstColumn.classList.add("cell");
-//         firstColumn.innerHTML = `${element.name}`;
-  
-//         const secondColumn = document.createElement("span");
-//         secondColumn.classList.add("cell");
-//         secondColumn.innerHTML = `${element.code}`;
-  
-//         const thirdColumn = document.createElement("span");
-//         thirdColumn.classList.add("cell");
-//         thirdColumn.innerHTML = `${element.capital}`;
-  
-//         const fourthColumn = document.createElement("span");
-//         fourthColumn.classList.add("cell");
-//         fourthColumn.innerHTML = `${element.region}`;
-  
-//         row.append(firstColumn, secondColumn, thirdColumn, fourthColumn);
-  
-//         dataWrapper.append(row);
-//       });
-//     });
-//   };
