@@ -12,13 +12,13 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <div class="wrapper ">
     <header>
       <h1>
         My Country List
       </h1>
     </header>
-    <nav>
+    <nav class="content">
       <div class="nav__column-one">
         <button data-btn-sort-name>Nosaukums</button><br>
         <input data-input-one type="text" id="text" name="text" placeholder="search" pattern="[a-z]" required>
@@ -31,7 +31,7 @@
         <input data-input-two type="text" id="text" name="text" placeholder="search" pattern="[a-z]" required>
       </div>
 
-      <div class="nav__column-one">
+      <div class="nav__column-one content">
         <button data-btn-sort-capital>
           Galvas pilsēta
         </button><br>
@@ -44,7 +44,7 @@
         </button><br>
         <input data-input-four type="text" id="text" name="text" placeholder="search" pattern="[a-z]" required>
       </div>
-      
+
     </nav>
     <div class="btn-search">
       <button data-search-btn>
@@ -53,10 +53,9 @@
     </div>
 
     <section data-wrapper class="wrapper-data"></section>
-    
 
     <footer>
-      <button>
+      <button data-get-mor-data>
         Load more or pagination
       </button>
     </footer>
