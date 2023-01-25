@@ -23,33 +23,27 @@ type Countries = {
 };
 
 const inputOne = document.querySelector<HTMLInputElement>("[data-input-one]");
+const inputTwo = document.querySelector<HTMLInputElement>("[data-input-two]");
+const inputThree =
+  document.querySelector<HTMLInputElement>("[data-input-three]");
+const inputFour = document.querySelector<HTMLInputElement>("[data-input-four]");
+
 const columnOne = document.querySelector("[data-column-one]");
 const dataWrapper = document.querySelector("[data-wrapper]");
 
-
-
-
-
-inputOne.addEventListener("change", function () {
-    
-});
-
-
 const searchBtn = document.querySelector("[data-search-btn]");
+
 searchBtn.addEventListener("click", function () {
-    
-    console.log(`click`);
-    let result = inputOne.value;
-    
-    dataWrapper.innerHTML = "";
-    console.log(result);
-    
-    getNewSortData(`http://localhost:3000/countries?name_like=${result}`);
+  dataWrapper.innerHTML = "";
+  const countryName = inputOne.value;
+  const countryCode = inputTwo.value;
+  const countryCapital = inputThree.value;
+  const countryRegion = inputFour.value;
 
+  getNewSortData(
+    `http://localhost:3000/countries?name_like=${countryName}&code_like=${countryCode}&region_like=${countryCapital}&region_like=${countryRegion}`
+  );
 });
-
-
-
 
 //-----------------START PAGE---------------------------------
 document.addEventListener("DOMContentLoaded", function () {
