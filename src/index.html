@@ -8,6 +8,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" href="/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <title>Document</title>
 </head>
 
@@ -20,42 +22,63 @@
     </header>
     <nav class="content">
       <div class="nav__column-one">
-        <button data-btn-sort-name>Nosaukums</button><br>
-        <input data-input-one type="text" id="text" name="text" placeholder="search" pattern="[a-z]" required>
+        <input data-input-one type="text" id="text" 
+        name="text" placeholder="Search Country" pattern="[a-z]" required>
       </div>
-
-      <div class="nav__column-one">
-        <button data-btn-sort-code>
-          Currency name
-        </button><br>
-        <input data-input-two type="text" id="text" name="text" placeholder="search" pattern="[a-z]" required>
-      </div>
-
+      
       <div class="nav__column-one content">
-        <button data-btn-sort-capital>
-          Galvas pilsēta
-        </button><br>
-        <input data-input-three type="text" id="text" name="text" placeholder="search" pattern="[a-z]" required>
+        <input data-input-three type="text" 
+        id="text" name="text" placeholder="Search Capital" pattern="[a-z]" required>
       </div>
 
       <div class="nav__column-one">
-        <button data-btn-sort-region>
-          Language name
-        </button><br>
-        <input data-input-four type="text" id="text" name="text" placeholder="search" pattern="[a-z]" required>
+        <input data-input-two type="text" 
+        id="text" name="text" placeholder="Search Country code" pattern="[a-z]" required>
       </div>
 
+      <div class="nav__column-one">
+        <input data-input-four type="text" id="text" 
+        name="text" placeholder="Search Region " pattern="[a-z]" required>
+      </div>
     </nav>
+
     <div class="btn-search">
-      <button data-search-btn>
+      <button data-search-btn class="button-search" role="button">
         Search
       </button>
+    </div>
+
+    <div class="all-sort-btn">
+      <div class="wrapper-sort">
+        <span class="wrapper__span-text">
+          Country
+        </span>
+        <span data-btn-sort-name class="material-symbols-outlined">expand_more</span>
+      </div>
+      <div class="wrapper-sort">
+        <span class="wrapper__span-text">
+          Сapital
+        </span>
+        <span data-btn-sort-code class="material-symbols-outlined">expand_more</span>
+      </div>
+      <div class="wrapper-sort">
+        <span class="wrapper__span-text">
+          Country code
+        </span>
+        <span data-btn-sort-capital class="material-symbols-outlined">expand_more</span>
+      </div>
+      <div class="wrapper-sort">
+        <span class="wrapper__span-text">
+          Region
+        </span>
+        <span data-btn-sort-region class="material-symbols-outlined">expand_more</span>
+      </div>
     </div>
 
     <section data-wrapper class="wrapper-data"></section>
 
     <footer>
-      <button data-get-mor-data>
+      <button data-get-mor-data class="btn-load-more">
         Load more or pagination
       </button>
     </footer>

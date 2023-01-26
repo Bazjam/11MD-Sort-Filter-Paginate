@@ -3,12 +3,13 @@
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #ecd6d6;
 }
 
 header {
   display: flex;
   justify-content: center;
+  color: #2b2e2d;;
 }
 
 .wrapper {
@@ -19,6 +20,14 @@ header {
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
+
+.nav__column-one {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  cursor: pointer;
+}
+
 section {
   background-color: #f3f3f3;
   width: 900px;
@@ -73,7 +82,9 @@ footer {
   width: 25%;
   display: flex;
   justify-content: flex-start;
-  padding-left: 40px;
+  padding-left: 50px;
+  text-align: start;
+  
 }
 
 .content {
@@ -87,10 +98,88 @@ footer {
   background-color: #f3f3f3;
 }
 
-.content-table tbody tr:last-of-type {
-}
-
 .span-text {
   font-weight: bold;
   color: #2b2e2d;
 }
+
+
+.all-sort-btn {
+  display: flex;
+  justify-content: space-around;
+}
+
+.wrapper-sort {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 7px 0 7px;
+}
+
+.material-symbols-outlined {
+  cursor: pointer;
+}
+
+
+
+/* CSS */
+.button-search,
+.btn-load-more {
+  --b: 2px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #373B44;
+  
+  padding: calc(.5em + var(--s)) calc(24.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .5em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.button-search:hover,
+.button-search:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-search:active {
+  background: var(--color);
+  color: #fff;
+}
+
+
+.btn-load-more{
+  padding: calc(.5em + var(--s)) calc(3.9em + var(--s));
+
+}
+.btn-load-more:hover,
+.btn-load-more:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.btn-load-more:active {
+  background: var(--color);
+  color: #fff;
+}
+
+
+.wrapper__span-text {
+  font-weight: bold;
+  color: #2b2e2d;
+}
+

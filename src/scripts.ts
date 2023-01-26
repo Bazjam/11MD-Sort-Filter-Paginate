@@ -28,7 +28,6 @@ const inputThree =
   document.querySelector<HTMLInputElement>("[data-input-three]");
 const inputFour = document.querySelector<HTMLInputElement>("[data-input-four]");
 
-const columnOne = document.querySelector("[data-column-one]");
 const dataWrapper = document.querySelector("[data-wrapper]");
 
 const searchBtn = document.querySelector("[data-search-btn]");
@@ -86,7 +85,7 @@ sortBtnName.addEventListener("click", function () {
 });
 
 //-----------------BTN SORT BY CODE---------------------------------
-const getSortedByCode = "http://localhost:3000/countries?_sort=code&_order=asc";
+const getSortedByCode = "http://localhost:3000/countries?_sort=capital&_order=asc";
 const sortBtnCode = document.querySelector("[data-btn-sort-code]");
 
 sortBtnCode.addEventListener("click", function () {
@@ -96,7 +95,7 @@ sortBtnCode.addEventListener("click", function () {
 
 //-----------------BTN SORT BY CAPITAL---------------------------------
 const getSortedByCapital =
-  "http://localhost:3000/countries?_sort=capital&_order=asc";
+  "http://localhost:3000/countries?_sort=code&_order=asc";
 const sortBtnCapital = document.querySelector("[data-btn-sort-capital]");
 
 sortBtnCapital.addEventListener("click", function () {
@@ -124,17 +123,17 @@ const getNewSortData = (url: string) => {
       dataPlaceholder.classList.add("dataPlaceHolder");
 
       dataPlaceholder.innerHTML = `
-        <div class="all-data one two">
+        <div class="all-data">
             <span class="span-text">${element.name}</span>
         </div> 
+        <div class="all-data">
+            <span class="span-text">${element.capital}</span>
+        </div>
         <div class="all-data one">
             <span class="span-text">${element.code}</span>
         </div>
         <div class="all-data one">
-            <span class="span-text">${element.capital}</span>
-        </div>
-        <div class="all-data one">
-            <span class="span-text">${element.region}</span>
+            <span class="span-text padding-l">${element.region}</span>
         </div> 
 
         `;
