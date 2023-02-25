@@ -22,10 +22,10 @@ type Countries = {
   isoCode: string;
 };
 
+//--------------------INPUTS-----------------------------
 const inputOne = document.querySelector<HTMLInputElement>("[data-input-one]");
 const inputTwo = document.querySelector<HTMLInputElement>("[data-input-two]");
-const inputThree =
-  document.querySelector<HTMLInputElement>("[data-input-three]");
+const inputThree = document.querySelector<HTMLInputElement>("[data-input-three]");
 const inputFour = document.querySelector<HTMLInputElement>("[data-input-four]");
 
 const dataWrapper = document.querySelector("[data-wrapper]");
@@ -62,10 +62,6 @@ const getMoreBtn = document.querySelector("[data-get-mor-data]");
 getMoreBtn.addEventListener("click", function () {
   const start = getStart();
   const end = getEnd();
-
-  console.log(start, end);
-  
-
   getNewSortData(`http://localhost:3000/countries?_start=${start}&_end=${end}`);
   counter++;
 });
@@ -113,13 +109,15 @@ sortBtnRegion.addEventListener("click", function () {
   getNewSortData(getSortedByRegion);
 });
 
-const getDataUrl = "http://localhost:3000/countries";
 const get18DataUrl = "http://localhost:3000/countries?name_start=1&_end=18";
 
 const getNewSortData = (url: string) => {
-  axios.get<Countries[]>(url).then(({ data }) => {
+
+  axios
+    .get<Countries[]>(url)
+    .then(({ data }) => {
     data.forEach((element) => {
-      const dataPlaceholder = document.createElement("div"); //     <div class="card-wrapper">
+      const dataPlaceholder = document.createElement("div"); 
       dataPlaceholder.classList.add("dataPlaceHolder");
 
       dataPlaceholder.innerHTML = `
@@ -135,7 +133,6 @@ const getNewSortData = (url: string) => {
         <div class="all-data one">
             <span class="span-text padding-l">${element.region}</span>
         </div> 
-
         `;
       dataWrapper.append(dataPlaceholder);
     });

@@ -35,6 +35,7 @@ section {
   display: flex;
   flex-direction: row;
 }
+
 nav {
   display: flex;
   justify-content: space-around;
@@ -84,7 +85,6 @@ footer {
   justify-content: flex-start;
   padding-left: 50px;
   text-align: start;
-  
 }
 
 .content {
@@ -103,7 +103,6 @@ footer {
   color: #2b2e2d;
 }
 
-
 .all-sort-btn {
   display: flex;
   justify-content: space-around;
@@ -120,13 +119,10 @@ footer {
   cursor: pointer;
 }
 
-
-
-/* CSS */
 .button-search,
 .btn-load-more {
-  --b: 2px;   /* border thickness */
-  --s: .45em; /* size of the corner */
+  --b: 2px;
+  --s: .45em;
   --color: #373B44;
   
   padding: calc(.5em + var(--s)) calc(24.9em + var(--s));
@@ -139,9 +135,7 @@ footer {
   outline: var(--b) solid #0000;
   outline-offset: .5em;
   font-size: 16px;
-
   border: 0;
-
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -160,11 +154,10 @@ footer {
   color: #fff;
 }
 
-
 .btn-load-more{
   padding: calc(.5em + var(--s)) calc(3.9em + var(--s));
-
 }
+
 .btn-load-more:hover,
 .btn-load-more:focus-visible{
   --_p: 0px;
@@ -176,7 +169,6 @@ footer {
   background: var(--color);
   color: #fff;
 }
-
 
 .wrapper__span-text {
   font-weight: bold;
